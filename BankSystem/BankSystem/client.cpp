@@ -1,0 +1,41 @@
+#include "client.h"
+
+void Client::set_client_id(int id) {
+	client_id = id;
+}
+
+Individual::Individual(string _name, string _surname, string _patronymic,
+	Date _birth_date, string _phone_number)
+{
+	name = _name;
+	surname = _surname;
+	patronymic = _patronymic;
+	if (patronymic == "") {
+		has_patronymic = false;
+	}
+	else {
+		has_patronymic = true;
+	}
+	birth_date = _birth_date;
+	phone_number = _phone_number;
+}
+
+Buisness::Buisness(string _name, string _adress, string _service_phone_number) {
+	name = _name;
+	adress = _adress;
+	service_phone_number = _service_phone_number;
+}
+
+void Individual::print_information() {
+	cout << "Client's information: " << endl;
+	cout << "Name, surname, patronymic: " << name << " " << surname << " " << patronymic << endl;
+	cout << "Birthdate: " << birth_date.day << "." << birth_date.month << "." << birth_date.year << endl;
+	cout << "Phone number: " << phone_number << endl;
+}
+
+void Buisness::print_information() {
+	cout << "Client's information: " << endl;
+	cout << "Name: " << name << endl;
+	cout << "Adress: " << adress << endl;
+	cout << "Service phone number: " << service_phone_number << endl;
+}
