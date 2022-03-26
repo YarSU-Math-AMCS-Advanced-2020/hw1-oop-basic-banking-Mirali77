@@ -3,7 +3,7 @@
 #include <time.h>
 #include <string>
 using namespace std;
-enum class TypeOfClient { ClientInGeneral, Individual, Buisness };
+//enum TypeOfClient { ClientInGeneral, Individual, Buisness };
 
 class Date {
 public:
@@ -15,7 +15,7 @@ public:
 class Client
 {
 public:
-	TypeOfClient type = TypeOfClient::ClientInGeneral;
+	//TypeOfClient type = TypeOfClient::ClientInGeneral;
 	int client_id;
 	Date time_of_registration;
 	void set_client_id(int id);

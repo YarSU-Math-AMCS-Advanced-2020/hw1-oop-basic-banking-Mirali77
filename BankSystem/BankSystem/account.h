@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-enum class Currency { Ruble, Dollar, Euro };
+enum Currency { Ruble, Dollar, Euro };
 class Account
 {
 	Currency currency;

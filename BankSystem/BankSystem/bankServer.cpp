@@ -188,16 +188,16 @@ void BankServer::OperateWithCash(bool withdraw_everything) {
 		map<int, Card>::iterator found_card = CardBase.find(card_id);
 		map<int, Account>::iterator found_account =
 			AccountBase.find(found_card->second.get_binded_account_id());
-		long long money = 1, amount_of_money;
+		long long money = -1, amount_of_money;
 		TypeOfOperation type = Withdrawing;
 		if (!withdraw_everything) {
 			cout << "What cash operation do you need? (Withdrawing, Adding): ";
 			cin >> answer;
 			if (answer == "Withdrawing") {
-				money *= -1;
 				type = Withdrawing;
 			}
 			else {
+				money *= -1;
 				type = Adding;
 			}
 			cout << "Enter the amount of money: ";
@@ -236,6 +236,9 @@ void BankServer::OperateWithCash(bool withdraw_everything) {
 		else {
 			cout << "Operation is denied. Try again" << endl;
 		}
+	}
+	else if (!withdraw_everything) {
+		cout << "Wrong id. Try again" << endl;
 	}
 }
 
@@ -281,7 +284,7 @@ void BankServer::ClosingAccount() {
 	cin >> id;
 	if (AccountBase.find(id) != AccountBase.end()) {
 		string answer;
-		map<int, Account>::iterator found_account;
+		map<int, Account>::iterator found_account = AccountBase.find(id);
 		cout << "What to do with the money on the account (Transfer, Withdraw): ";
 		cin >> answer;
 		if (answer == "Transfer") {
@@ -291,7 +294,7 @@ void BankServer::ClosingAccount() {
 			OperateWithCash(true);
 		}
 		cout << "Closing account is in processing..." << endl;
-		ClosedAccountBase.insert(*found_account);
+		ClosedAccountBase.insert(make_pair(id, found_account->second));
 		AccountBase.erase(found_account);
 		cout << "Account is closed!" << endl;
 	}

@@ -3,7 +3,7 @@
 #include <string>
 #include "client.h"
 
-enum class PaymentSystem { Lisa, MasterBart, HoMiR };
+enum PaymentSystem { Lisa, MasterBart, HoMiR };
 
 class Card
 {

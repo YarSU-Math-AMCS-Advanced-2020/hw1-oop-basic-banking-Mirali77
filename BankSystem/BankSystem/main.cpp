@@ -21,6 +21,7 @@ int main() {
 		cout << "13 - Print account's information" << endl;
 		cout << "14 - Print card's information" << endl;
 		cout << "15 - End program" << endl;
+		cout << "Enter your choice: ";
 		cin >> answer;
 		switch (answer) {
 		case 1:

@@ -5,8 +5,8 @@
 
 using namespace std;
 
-enum class TypeOfOperation { Withdrawing, Adding };
-enum class StatusOfCashOperation { Cash_Done, Cash_Denied };
+enum TypeOfOperation { Withdrawing, Adding };
+enum StatusOfCashOperation { Cash_Done, Cash_Denied };
 class CashOperation
 {
 	int from_account_id;

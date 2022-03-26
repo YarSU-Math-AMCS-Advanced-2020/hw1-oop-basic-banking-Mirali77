@@ -5,7 +5,7 @@
 #include "client.h"
 using namespace std;
 
-enum class TransactionStatus { IsToProcess, IsProcessing, Done, Denied };
+enum TransactionStatus { IsToProcess, IsProcessing, Done, Denied };
 
 class Time {
 public:
