@@ -1,5 +1,6 @@
 #include "cashOperation.h"
 
+//Конструктор
 CashOperation::CashOperation(int _from_account_id, long long _amount_of_money,
 	TypeOfOperation _type_of_operation, Date _date_of_operation,
 	Time _time_of_opearion,

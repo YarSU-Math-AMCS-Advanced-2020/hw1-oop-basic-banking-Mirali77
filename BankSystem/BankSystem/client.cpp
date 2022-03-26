@@ -1,9 +1,11 @@
 #include "client.h"
 
+//Сеттер айди
 void Client::set_client_id(int id) {
 	client_id = id;
 }
 
+//Конструктор физ.лица
 Individual::Individual(string _name, string _surname, string _patronymic,
 	Date _birth_date, string _phone_number)
 {
@@ -20,12 +22,14 @@ Individual::Individual(string _name, string _surname, string _patronymic,
 	phone_number = _phone_number;
 }
 
+//Конструктор юр.лица
 Buisness::Buisness(string _name, string _adress, string _service_phone_number) {
 	name = _name;
 	adress = _adress;
 	service_phone_number = _service_phone_number;
 }
 
+//Вывод ифнормации физ.лица
 void Individual::print_information() {
 	cout << "Client's information: " << endl;
 	cout << "Name, surname, patronymic: " << name << " " << surname << " " << patronymic << endl;
@@ -33,6 +37,7 @@ void Individual::print_information() {
 	cout << "Phone number: " << phone_number << endl;
 }
 
+//Вывод информации юр.лица
 void Buisness::print_information() {
 	cout << "Client's information: " << endl;
 	cout << "Name: " << name << endl;

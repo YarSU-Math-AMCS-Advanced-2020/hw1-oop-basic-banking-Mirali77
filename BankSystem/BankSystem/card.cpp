@@ -1,5 +1,6 @@
 #include "card.h"
 
+//Конструктор
 Card::Card(int _binded_account_id, PaymentSystem _payment_system,
 	Date _date_of_expire, long long _card_limit_on_money_withdrawal = -1)
 {
@@ -9,26 +10,32 @@ Card::Card(int _binded_account_id, PaymentSystem _payment_system,
 	card_limit_on_money_withdrawal = _card_limit_on_money_withdrawal;
 }
 
+//Сеттер айди
 void Card::set_card_id(int id) {
 	card_id = id;
 }
 
+//Сеттер лимита
 void Card::set_limit(long long limit) {
 	card_limit_on_money_withdrawal = limit;
 }
 
+//Перепривязка карты
 void Card::change_binded_account(int id) {
 	binded_account_id = id;
 }
 
+//Геттер привязки карты
 int Card::get_binded_account_id() {
 	return binded_account_id;
 }
 
+//Геттер лимита карты
 long long Card::get_card_limit() {
 	return card_limit_on_money_withdrawal;
 }
 
+//Вывод информации
 void Card::print_information() {
 	cout << "Card's information: " << endl;
 	cout << "Id: " << card_id << endl;

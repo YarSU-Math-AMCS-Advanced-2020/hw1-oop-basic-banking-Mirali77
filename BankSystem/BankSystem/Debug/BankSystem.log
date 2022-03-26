@@ -1,8 +1,21 @@
-﻿  bankServer.cpp
-D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(18,45): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(18,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+﻿  account.cpp
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,45): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.cpp(14,46): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.cpp(14,71): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  bankServer.cpp
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,45): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  card.cpp
+  cashOperation.cpp
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,45): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  client.cpp
   main.cpp
-D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(18,45): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(18,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,45): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  transaction.cpp
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,45): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\BankSystem\account.h(32,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   Создание кода...
   BankSystem.vcxproj -> D:\Dz\hw1-oop-basic-banking-Mirali77\BankSystem\Debug\BankSystem.exe
