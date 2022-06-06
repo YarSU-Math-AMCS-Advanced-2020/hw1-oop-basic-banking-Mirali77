@@ -17,6 +17,39 @@ Transaction::Transaction(Card _from_card, Card _to_card,
 	to_account = to_card->get_binded_account();
 }
 
+//Конструктор (с карты на счёт)
+Transaction::Transaction(Card _from_card, Account _to_account,
+	long long _ammount_of_money, Currency _operation_currency,
+	Date _date_of_transaction, Time _time_of_transaction,
+	TransactionStatus _transaction_status) 
+{
+	from_card = &_from_card;
+	ammount_of_money = _ammount_of_money;
+	operation_currency = _operation_currency;
+	date_of_transaction = _date_of_transaction;
+	time_of_transaction = _time_of_transaction;
+	transaction_status = _transaction_status;
+	from_account = from_card->get_binded_account();
+	to_account = &_to_account;
+}
+
+//Конструктор (со счёта на карту)
+Transaction::Transaction(Account _from_account, Card _to_card,
+	long long _ammount_of_money, Currency _operation_currency,
+	Date _date_of_transaction, Time _time_of_transaction,
+	TransactionStatus _transaction_status)
+{
+	to_card = &_to_card;
+	ammount_of_money = _ammount_of_money;
+	operation_currency = _operation_currency;
+	date_of_transaction = _date_of_transaction;
+	time_of_transaction = _time_of_transaction;
+	transaction_status = _transaction_status;
+	from_account = &_from_account;
+	to_account = to_card->get_binded_account();
+}
+
+
 //Выполнение транзакции
 void Transaction::Execute() {
 	//Обработка случаев отказа

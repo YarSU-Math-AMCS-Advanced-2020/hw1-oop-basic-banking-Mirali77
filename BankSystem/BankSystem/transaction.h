@@ -39,12 +39,21 @@ class Transaction
 	//Статус транзакции
 	TransactionStatus transaction_status;
 public:
-	//Конструктор
+	//Конструктор (с карты на карту)
 	Transaction(Card _from_card, Card _to_card,
 		long long _ammount_of_money, Currency _operation_currency,
 		Date _date_of_transaction, Time _time_of_transaction,
 		TransactionStatus _transaction_status);
-
+	//Конструктор (с карты на счёт)
+	Transaction(Card _from_card, Account _to_account,
+		long long _ammount_of_money, Currency _operation_currency,
+		Date _date_of_transaction, Time _time_of_transaction,
+		TransactionStatus _transaction_status);
+	//Конструктор (со счёта на карту)
+	Transaction(Account _from_account, Card _to_card,
+		long long _ammount_of_money, Currency _operation_currency,
+		Date _date_of_transaction, Time _time_of_transaction,
+		TransactionStatus _transaction_status);
 	//Выполнить транзакцию
 	void Execute();
 };
