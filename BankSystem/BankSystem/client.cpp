@@ -44,3 +44,8 @@ void Buisness::print_information() {
 	cout << "Adress: " << adress << endl;
 	cout << "Service phone number: " << service_phone_number << endl;
 }
+
+//Геттер айди
+int Client::get_id() {
+	return client_id;
+}

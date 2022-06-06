@@ -2,11 +2,11 @@
 
 //Конструктор
 Account::Account(Currency _currency, long long _limit_on_money_withdrawal,
-	int _binded_client_id)
+	Client _binded_client)
 {
 	currency = _currency;
 	limit_on_money_withdrawal = _limit_on_money_withdrawal;
-	binded_client_id = _binded_client_id;
+	binded_client = &_binded_client;
 	amount_of_money = 0;
 }
 
@@ -60,6 +60,10 @@ void Account::print_information() {
 		cout << "Euro" << endl;
 	}
 	cout << "Limit on money withdrawal: " << limit_on_money_withdrawal << endl;
-	cout << "Binded client id: " << binded_client_id << endl;
+	cout << "Binded client id: " << binded_client->get_id() << endl;
 	cout << "Amount of money: " << amount_of_money << endl;
+}
+
+int Account::get_id() {
+	return account_id;
 }

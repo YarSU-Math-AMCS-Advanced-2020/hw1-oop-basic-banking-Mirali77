@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "client.h"
 using namespace std;
 
 //Значения валют
@@ -13,15 +14,15 @@ class Account
 	Currency currency;
 	//Лимит на трату денег
 	long long limit_on_money_withdrawal;
-	//Айди клиента, к которому привязан счёт
-	int binded_client_id;
+	//Клиент, к которому привязан счёт
+	Client* binded_client;
 	//Количество денег на счету
 	long long amount_of_money;
 	//Айди аккаунта
 	int account_id;
 public:
 	//Конструктор
-	Account(Currency _currency, long long _limit_on_money_withdrawal, int _binded_client_id);
+	Account(Currency _currency, long long _limit_on_money_withdrawal, Client _binded_client);
 	//Сеттер айди счёта
 	void set_account_id(int id);
 	//Функция изменения лимита
@@ -38,4 +39,6 @@ public:
 	long long get_amount_of_money();
 	//Вывод информации о счёте
 	void print_information();
+	//Геттер айди
+	int get_id();
 };

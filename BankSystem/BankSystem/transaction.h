@@ -3,6 +3,7 @@
 #include <string>
 #include "account.h"
 #include "client.h"
+#include "card.h"
 using namespace std;
 
 //Значения статусов транзакции
@@ -19,10 +20,14 @@ public:
 //Класс Транзакция
 class Transaction
 {
-	//Айди карты, с которого идёт перечисление денег
-	int from_card_id;
-	//Айди карты, на которую идёт перечисление денег
-	int to_card_id;
+	//Карта, с которого идёт перечисление денег
+	Card* from_card;
+	//Карта, на которую идёт перечисление денег
+	Card* to_card;
+	//Счёт, с которого идёт перечисление денег
+	Account* from_account;
+	//Счёт, на который идёт перечисление денег
+	Account* to_account;
 	//Количество перечисленных денег
 	long long ammount_of_money;
 	//Валюта перевода
@@ -35,9 +40,12 @@ class Transaction
 	TransactionStatus transaction_status;
 public:
 	//Конструктор
-	Transaction(int _from_card_id, int _to_card_id,
+	Transaction(Card _from_card, Card _to_card,
 		long long _ammount_of_money, Currency _operation_currency,
 		Date _date_of_transaction, Time _time_of_transaction,
 		TransactionStatus _transaction_status);
+
+	//Выполнить транзакцию
+	void Execute();
 };
 

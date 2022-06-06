@@ -22,6 +22,8 @@ public:
 	Date time_of_registration;
 	//Сеттер айди клиента
 	void set_client_id(int id);
+	//Геттер айди
+	int get_id();
 };
 
 //Класс Физическое Лицо

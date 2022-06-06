@@ -168,32 +168,11 @@ void BankServer::Transfer() {
 			cin >> time.hour >> time.minute >> time.second;
 			cout << "Transfer is in process..." << endl;
 
-			//Обработка случаев отказа
-			if (!is_currency_same(from_account->second, to_account->second)) {
-				status = TransactionStatus::Denied;
-			}
-			if (money > from_account->second.get_amount_of_money()) {
-				status = TransactionStatus::Denied;
-			}
-			if (money > from_account->second.get_limit()) {
-				status = TransactionStatus::Denied;
-			}
-			if (money > from_card->second.get_card_limit()) {
-				status = TransactionStatus::Denied;
-			}
-
 			//Регистрация транзакции
 			Transaction new_transfer(from_card->second.get_binded_account_id(),
 				to_card->second.get_binded_account_id(), money, currency, date, time,
-				status);
-			if (status == Denied) {
-				cout << "Transfer is denied. Try again" << endl;
-			}
-			else {
-				to_account->second.change_ammount_of_money(money);
-				from_account->second.change_ammount_of_money(-money);
-				cout << "Transfer is complete!" << endl;
-			}
+				TransactionStatus(IsToProcess));
+			new_transfer.Execute();
 			TransactionBase.push_back(new_transfer);
 		}
 		else {
@@ -250,16 +229,6 @@ void BankServer::OperateWithCash(bool withdraw_everything) {
 		cin >> time.hour >> time.minute >> time.second;
 		StatusOfCashOperation status = Cash_Done;
 
-		//Обработка случаев отказа
-		if (found_account->second.get_amount_of_money() + money < 0) {
-			status = Cash_Denied;
-		}
-		if (money < 0 && found_account->second.get_limit() < -money) {
-			status = Cash_Denied;
-		}
-		if (money < 0 && found_card->second.get_card_limit() < -money) {
-			status = Cash_Denied;
-		}
 
 		//Запрос номера отделения
 		cout << "Enter the number of department: ";
@@ -269,13 +238,7 @@ void BankServer::OperateWithCash(bool withdraw_everything) {
 		//Регистрация операции
 		CashOperation cash_operation(found_account->first, money, type,
 			date, time, status, number_of_department);
-		if (status == Cash_Done) {
-			found_account->second.change_ammount_of_money(money);
-			cout << "Operation is complete" << endl;
-		}
-		else {
-			cout << "Operation is denied. Try again" << endl;
-		}
+		cash_operation.Execute()
 	}
 	else if (!withdraw_everything) {
 		cout << "Wrong id. Try again" << endl;
